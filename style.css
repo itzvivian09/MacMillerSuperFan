@@ -1,0 +1,213 @@
+/* the 100vh and 100vw set the size of the body to fill the viewport (screen) */
+body {
+  height: 100vh;
+  width: 100vw;
+  display: block;
+  margin: 0;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+/* changes to the style when the user HOVERS */
+
+/* changes to the style when the user HOVERS */
+#MacMiller {
+  position: absolute;
+  top: 50;
+  left: 0;
+  width: 100%; /* matches textBox width */
+  height: auto; /* keeps proportions */
+  display: none; /* stays hidden until reset */
+}
+#textBox {
+  background: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  width: 100%; /* matches GIF */
+  text-align: center;
+}
+.side-button {
+  position: fixed;
+  top: 60%;
+  right: 10px;
+  z-index: 1000;
+  width: 142px; /* match textBox width */
+  height: auto;
+}
+
+/* VIDEO SCALES NICELY */
+iframe {
+  width: 100%;
+  height: 100%;
+}
+.row {
+  height: 25%;
+  width: 100%;
+  display: flex;
+}
+.split {
+  height: 100%;
+  width: 50%;
+  display: flex;
+}
+.middle {
+  height: 50%;
+  width: 100%;
+}
+
+.center-content {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.hidden {
+  display: none;
+}
+.box {
+  width: 100%;
+  height: 100%;
+}
+
+.box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.box:hover img {
+  filter: blur(4px) brightness(0.6);
+}
+
+/* text that appears on hover */
+.box span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  opacity: 0;
+  transition: 0.3s ease;
+  text-shadow: 0px 0px 8px black;
+}
+
+.box:hover span {
+  opacity: 1;
+}
+.flip-card {
+  width: 100%;
+  height: 100%;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.9s ease;
+}
+
+.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.flip-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flip-back {
+  background: black;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* ERIC: new code to add some space between the text and the edge of the black box */
+.flip-back p {
+  padding: 10px;
+}
+
+/* these classes specify color */
+.yellow {
+  background-color: yellow;
+}
+.blue {
+  background-color: blue;
+}
+.pink {
+  background-color: pink;
+}
+.red {
+  background-color: red;
+}
+.orange {
+  background-color: orange;
+}
+.grey {
+  background-color: grey;
+}
+.black {
+  background-color: black;
+}
+.white {
+  background-color: white;
+}
+.green {
+  background-color: green;
+}
+.purple {
+  background-color: purple;
+}
+/* styles if the screen is 600px or less */
+@media only screen and (max-width: 450px) {
+  .box {
+    height: 50%;
+    width: 100%;
+  }
+  .top {
+    display: block;
+  }
+
+  .bottom {
+    height: 50%;
+    width: 100%;
+  }
+  .split {
+    display: block;
+  }
+  p {
+    font-size: 7px;
+  }
+  h3 {
+    font-size: 10px;
+  }
+
+  #textBox {
+    width: 100px; /* smaller width on small screens */
+    font-size: 10px; /* smaller text */
+    padding: 3px 5px; /* smaller padding */
+    position: fixed; /* keep it fixed on screen */
+    top: 70%; /* move it further down */
+    z-index: 1000; /* on top of other elements */
+  }
+}
